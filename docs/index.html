@@ -29,11 +29,11 @@
 				pointer-events: none;
 			}
 			#innerInari {
-				mask-image: url(bat_clip.png);
+				mask-image: url(test_clip_2.png);
 				mask-size: min(100vh, 100vw);
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(45deg, transparent 0%, white 50%, transparent 100%);
+				--background: linear-gradient(45deg, transparent 0%, transparent 45%, white 50%, transparent 55%, transparent 100%);
 				background-blend-mode: screen;
 			}
 			#imgContainer {
@@ -62,7 +62,18 @@
 					const rotX = -15 + e.clientY / window.innerHeight * 30;
 					const slider = (e.clientY / window.innerHeight + e.clientX / window.innerWidth) * 100 / 2;
 					document.getElementById("inari").style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-					document.getElementById("innerInari").style.background = `linear-gradient(45deg, transparent 0%, white ${slider}%, transparent 100%)`
+					document.getElementById("innerInari").style.background = `linear-gradient(45deg,
+					transparent 0%,
+					transparent ${slider - 15 - 5}%,
+					rgba(255,0,0,0.5) ${slider - 15}%,
+					transparent ${slider - 15 + 5}%,
+					transparent ${slider - 5}%,
+					rgba(255,0,0,0.5) ${slider}%,
+					transparent ${slider + 5}%,
+					transparent ${slider + 15 - 5}%,
+					rgba(255,0,0,0.5) ${slider + 15}%,
+					transparent ${slider + 15 + 5}%,
+					transparent 100%)`
 				})
 			}
 		</script>
