@@ -1,0 +1,27 @@
+{
+  "name": "inari_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inariakagane/inariHomepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inariakagane/inariHomepage/issues"
+  },
+  "homepage": "https://github.com/inariakagane/inariHomepage#readme",
+  "dependencies": {
+    "webpack": "^5.3.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
