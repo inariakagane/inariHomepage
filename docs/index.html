@@ -2,17 +2,6 @@
 	<head>		
 		<meta charset="UTF-8">
 		<style>
-			#sun {
-				position: absolute;
-				transform: perspective(800px);
-				width: min(100vh, 100vw);
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-o-user-select: none;
-				user-select: none;
-				pointer-events: none;
-			}
 			#inari {
 				background-image: url("./raw_texture_bg.png");
 				background-size: cover;
@@ -21,7 +10,7 @@
 				width: min(100vh, 100vw);
 				height: calc(min(100vh, 100vw) * 2 / 3);
 				border-radius: 16px;
-				filter: drop-shadow(8px 8px 8px black);
+				filter: drop-shadow(-1px -1px 1px white) drop-shadow(8px 8px 8px black);
 				-webkit-user-select: none;
 				-khtml-user-select: none;
 				-moz-user-select: none;
@@ -105,6 +94,7 @@
 					const rotX = -15 + e.clientY / window.innerHeight * 30;
 					const slider = (e.clientY / window.innerHeight + e.clientX / window.innerWidth) * 100 / 2;
 					document.getElementById("inari").style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+					document.getElementById("inari").style.filter = `drop-shadow(${-2 + e.clientX / window.innerWidth * 4}px ${-2 + e.clientY / window.innerHeight * 4}px 0px rgba(66,66,66,1)) drop-shadow(8px 8px 8px black)`;
 					document.getElementById("innerInari").style.transform = `rotateX(${rotX * 3 / 4}deg) rotateY(${rotY * 3 / 4}deg)`;
 					document.getElementById("mask1").style.background = `linear-gradient(45deg,
 					transparent 0%,
@@ -143,6 +133,7 @@
 				<div id="innerInari"></div>
 			</div>
 			<div id="credit">
+				<div>Credit:</div>
 				<div>🐺 <a target="_blank" href="https://twitter.com/inari_akagane">Inari</a></div>
 				<div>🎨 <a target="_blank" href="https://twitter.com/_rbiim">Falu</a></div>
 			</div>
