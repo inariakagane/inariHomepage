@@ -1,5 +1,6 @@
 <html>
-	<head>
+	<head>		
+		<meta charset="UTF-8">
 		<style>
 			#sun {
 				position: absolute;
@@ -13,7 +14,7 @@
 				pointer-events: none;
 			}
 			#inari {
-				background-image: url("./VRinari_halloween_onbg.png");
+				background-image: url("./raw_texture_bg.png");
 				background-size: cover;
 				position: absolute;
 				transform: perspective(800px);
@@ -29,7 +30,41 @@
 				pointer-events: none;
 			}
 			#innerInari {
-				mask-image: url(test_clip_2.png);
+				background-image: url("./inari.png");
+				background-size: cover;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				filter: drop-shadow(8px 8px 8px black);
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				pointer-events: none;
+
+			}
+			#mask1 {
+				position: absolute;
+				mask-image: url(bats.png);
+				mask-size: min(100vh, 100vw);
+				width: 100%;
+				height: 100%;
+				--background: linear-gradient(45deg, transparent 0%, transparent 45%, white 50%, transparent 55%, transparent 100%);
+				background-blend-mode: screen;
+			}
+			#mask2 {
+				position: absolute;
+				mask-image: url(sun_textured.png);
+				mask-size: min(100vh, 100vw);
+				width: 100%;
+				height: 100%;
+				--background: linear-gradient(45deg, transparent 0%, transparent 45%, white 50%, transparent 55%, transparent 100%);
+				background-blend-mode: screen;
+			}
+			#mask3 {
+				position: absolute;
+				mask-image: url(halloween_text.png);
 				mask-size: min(100vh, 100vw);
 				width: 100%;
 				height: 100%;
@@ -47,6 +82,14 @@
 				justify-content: center;
 				align-items: center;
 			}
+			#credit {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				font-family: 'Courier New', Courier, monospace;
+				color: white;
+				padding: 8px;
+			}
 			body {
 				overflow: hidden;
 			}
@@ -62,17 +105,30 @@
 					const rotX = -15 + e.clientY / window.innerHeight * 30;
 					const slider = (e.clientY / window.innerHeight + e.clientX / window.innerWidth) * 100 / 2;
 					document.getElementById("inari").style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-					document.getElementById("innerInari").style.background = `linear-gradient(45deg,
+					document.getElementById("innerInari").style.transform = `rotateX(${rotX * 3 / 4}deg) rotateY(${rotY * 3 / 4}deg)`;
+					document.getElementById("mask1").style.background = `linear-gradient(45deg,
 					transparent 0%,
 					transparent ${slider - 15 - 5}%,
-					rgba(255,0,0,0.5) ${slider - 15}%,
+					rgba(255,255,255,0.25) ${slider - 15}%,
 					transparent ${slider - 15 + 5}%,
 					transparent ${slider - 5}%,
-					rgba(255,0,0,0.5) ${slider}%,
+					rgba(255,255,255,0.25) ${slider}%,
 					transparent ${slider + 5}%,
 					transparent ${slider + 15 - 5}%,
-					rgba(255,0,0,0.5) ${slider + 15}%,
+					rgba(255,255,255,0.25) ${slider + 15}%,
 					transparent ${slider + 15 + 5}%,
+					transparent 100%)`
+					document.getElementById("mask2").style.background = `linear-gradient(-60deg,
+					transparent 0%,
+					transparent ${slider - 10}%,
+					rgba(255,255,255,0.5) ${slider}%,
+					transparent ${slider + 10}%,
+					transparent 100%)`
+					document.getElementById("mask3").style.background = `linear-gradient(-60deg,
+					transparent 0%,
+					transparent ${slider - 10}%,
+					rgba(255,255,255,0.5) ${slider}%,
+					transparent ${slider + 10}%,
 					transparent 100%)`
 				})
 			}
@@ -81,7 +137,14 @@
 	<body onload="init()">
 		<div id="imgContainer">
 			<div id="inari">
+				<div id="mask1"></div>
+				<div id="mask2"></div>
+				<div id="mask3"></div>
 				<div id="innerInari"></div>
+			</div>
+			<div id="credit">
+				<div>🐺 <a target="_blank" href="https://twitter.com/inari_akagane">Inari</a></div>
+				<div>🎨 <a target="_blank" href="https://twitter.com/_rbiim">Falu</a></div>
 			</div>
 		</div>
 	</body>
