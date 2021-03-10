@@ -1,9 +1,11 @@
 <html>
-	<head>		
+	<head>
 		<meta charset="UTF-8">
+		<link rel="icon" type="image/png" href="../static/inari_heart.png" />
+		<title>Inari Halloween 2020</title>
 		<style>
 			#inari {
-				background-image: url("./raw_texture_bg.png");
+				background-image: url("../static/raw_texture_bg.png");
 				background-size: cover;
 				position: absolute;
 				transform: perspective(800px);
@@ -19,7 +21,7 @@
 				pointer-events: none;
 			}
 			#innerInari {
-				background-image: url("./inari.png");
+				background-image: url("../static/inari.png");
 				background-size: cover;
 				position: absolute;
 				width: 100%;
@@ -35,7 +37,7 @@
 			}
 			#mask1 {
 				position: absolute;
-				mask-image: url(bats.png);
+				mask-image: url("../static/bats.png");
 				mask-size: min(100vh, 100vw);
 				width: 100%;
 				height: 100%;
@@ -44,7 +46,7 @@
 			}
 			#mask2 {
 				position: absolute;
-				mask-image: url(sun_textured.png);
+				mask-image: url("../static/sun_textured.png");
 				mask-size: min(100vh, 100vw);
 				width: 100%;
 				height: 100%;
@@ -53,7 +55,7 @@
 			}
 			#mask3 {
 				position: absolute;
-				mask-image: url(halloween_text.png);
+				mask-image: url("../static/halloween_text.png");
 				mask-size: min(100vh, 100vw);
 				width: 100%;
 				height: 100%;
@@ -78,6 +80,16 @@
 				font-family: 'Courier New', Courier, monospace;
 				color: white;
 				padding: 8px;
+				font-size: xx-large;
+			}
+			#back {
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-family: 'Courier New', Courier, monospace;
+				color: white;
+				padding: 8px;
+				font-size: xx-large;
 			}
 			body {
 				overflow: hidden;
@@ -131,6 +143,9 @@
 				<div id="mask2"></div>
 				<div id="mask3"></div>
 				<div id="innerInari"></div>
+			</div>
+			<div id="back">
+				<a href="../index.html">Back</a>
 			</div>
 			<div id="credit">
 				<div>Credit:</div>
