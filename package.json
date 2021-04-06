@@ -7,6 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
+    "start": "python3 -m http.server --directory ./app",
+    "deploy": "rsync --archive --delete --verbose ./app/ ${SERVER_USER}@${SERVER_IP}:${SERVER_PATH}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

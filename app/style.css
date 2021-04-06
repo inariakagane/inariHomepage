@@ -1,0 +1,66 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#bg {
+    height: 100%;
+    width: 100%;
+    background: url('../static/inari_images/VRinari_twitterBanner.png');
+    background-size: cover;
+    background-position: 100% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#aCanvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#centerSpread {
+    width: calc(1280px - 64px);
+    height: calc(100% - 64px);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 16px;
+    margin: 16px;
+    border-radius: 32px;
+    position: relative;
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.5)) drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5)) drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.5));
+}
+#title {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    font-weight: bolder;
+    color: white;
+    filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 4px black) drop-shadow(0px 0px 8px black);
+}
+#linkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc((100% - 3em) / 2);
+}
+.link {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 500px;
+    height: 32px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.link:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.link:active {
+    background-color: rgba(0, 0, 0, 0.75);
+}
