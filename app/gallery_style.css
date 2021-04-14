@@ -1,0 +1,43 @@
+body {
+    background: #005349;
+}
+#table-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+#license-warning {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+#license-itself {
+    border: 2px solid black;
+    border-radius: 8px;
+    width: 66%;
+    padding: 16px;
+    margin: 16px;
+    font-size: x-large;
+    font-family: sans-serif;
+}
+.table-image {
+    max-width: 25vw;
+    max-height: 25vh;
+}
+#backButton {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 8px;
+    font-size: xx-large;
+}
+td {
+    text-align: center;
+    min-width: calc(25vw / 4);
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: xx-large;
+    font-family: sans-serif;
+}
